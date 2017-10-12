@@ -48,7 +48,6 @@
                 $('#inputOffice').val(selectTitle);
             }
             $('.modal').modal('hide');
-
         });
     }
 
