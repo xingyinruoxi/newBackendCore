@@ -1,0 +1,53 @@
+extends ../layout
+block section
+    ul(class="nav nav-tabs")#nav-tabs
+        li(class="active")
+            a(href="javascript:;")  个人信息
+        li
+            a(href="/personal/changepwd.html") 修改密码
+    div(style="width:500px").pad-top-30
+        form.form-horizontal
+            .form-group
+                label(class="col-sm-3 control-label") 归属公司:
+                .col-sm-7
+                    p.form-control-static 山东省总公司
+            .form-group
+                label(class="col-sm-3 control-label") 归属部门:
+                .col-sm-7
+                    p.form-control-static 公司领导
+            .form-group
+                label(class="col-sm-3 control-label") 姓名:
+                .col-sm-5
+                    input(type="text" class="form-control" value="系统管理员")
+            .form-group
+                label(class="col-sm-3 control-label") 邮箱:
+                .col-sm-5
+                    input(type="text" class="form-control" value="thinkgem@163.com")
+            .form-group
+                label(class="col-sm-3 control-label") 电话:
+                .col-sm-5
+                    input(type="text" class="form-control" value="8675")
+            .form-group
+                label(class="col-sm-3 control-label") 手机:
+                .col-sm-5
+                    input(type="text" class="form-control" value="最高管理员")
+
+            .form-group
+                label(class="col-sm-3 control-label") 备注:
+                .col-sm-5
+                    textarea( class="form-control" rows="3") 最高管理员
+            .form-group
+                label(class="col-sm-3 control-label") 用户类型:
+                .col-sm-7
+                    p.form-control-static 无
+            .form-group
+                label(class="col-sm-3 control-label") 用户角色:
+                .col-sm-7
+                    p.form-control-static 公司管理员,系统管理员
+            .form-group
+                label(class="col-sm-3 control-label") 上次登录:
+                .col-sm-9
+                    p.form-control-static IP: 10.10.150.174    时间：2017年8月21日 星期一 11:20:25
+            .form-group
+                .col-sm-5.col-sm-offset-3
+                    button(type="submit" class="btn btn-primary btn-block") 保&nbsp;存

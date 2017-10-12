@@ -1,0 +1,117 @@
+extends ../layout
+block section
+    ul(class="nav nav-tabs")#nav-tabs
+        li
+            a(href="/company/user.html")  用户列表
+        li(class="active")
+            a(href="javascript:;") 用户添加
+    div(style="width:500px").pad-top-30
+        form.form-horizontal
+            .form-group
+                label(class="col-sm-3 control-label") 归属公司:
+                .col-sm-7
+                    .input-group
+                        input(type="text" class="form-control" value="山东省总公司")
+                        a(href="jvascript:;").input-group-addon
+                            i.glyphicon.glyphicon-search
+            .form-group
+                label(class="col-sm-3 control-label") 归属部门:
+                .col-sm-7
+                    .input-group
+                        input(type="text" class="form-control" value="公司领导")
+                        a(href="jvascript:;").input-group-addon
+                            i.glyphicon.glyphicon-search
+            .form-group
+                label(class="col-sm-3 control-label") 工号:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 姓名:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 登录名:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 密码:
+                .col-sm-6
+                    input(type="password" class="form-control" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 确认密码:
+                .col-sm-6
+                    input(type="password" class="form-control" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 邮箱:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+            .form-group
+                label(class="col-sm-3 control-label") 电话:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+            .form-group
+                label(class="col-sm-3 control-label") 手机:
+                .col-sm-6
+                    input(type="text" class="form-control" value="")
+            .form-group
+                label(class="col-sm-3 control-label") 用户类型:
+                .col-sm-3
+                    select.form-control
+                        option 是
+                        option 否
+            .form-group
+                label(class="col-sm-3 control-label") 用户类型:
+                .col-sm-6
+                    select.form-control
+                        option 请选择
+                        option 系统管理
+                        option 部门经理
+                        option 普通用户
+            .form-group
+                label(class="col-sm-3 control-label") 用户角色:
+                .col-sm-9
+                    //
+                    .checkbox
+                        label
+                            input(type="checkbox")
+                            |公司管理员
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 普通用户
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 本公司管理员
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 本部门管理员
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 部门管理员
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 公司管理员
+                        &emsp;
+                        label
+                            input(type="checkbox")
+                            | 济南市管理员 *
+            .form-group
+                label(class="col-sm-3 control-label") 备注:
+                .col-sm-6
+                    textarea( class="form-control" rows="3")
+            .form-group
+                .col-sm-6.col-sm-offset-3
+                    ul.list-unstyled.row
+                        li.col-sm-6
+                            button(type="submit" class="btn btn-primary btn-block") 保&nbsp;存
+                        li.col-sm-6
+                            a(href="/company/user.html" class="btn btn-info btn-block") 返&nbsp;回

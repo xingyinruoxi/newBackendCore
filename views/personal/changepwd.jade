@@ -1,0 +1,29 @@
+extends ../layout
+block section
+    input(type='hidden' value='客户详情')#addTabTitle
+    ul(class="nav nav-tabs")#nav-tabs
+        li
+            a(href="/personal/userinfo.html")  个人信息
+        li(class="active")
+            a(href="javascript:;") 修改密码
+    div(style="width:500px").pad-top-30
+        form.form-horizontal#myform
+            .form-group
+                label(class="col-sm-3 control-label") 旧密码:
+                .col-sm-5
+                    input(type="password" name="oldPassword" class="form-control required" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 新密码:
+                .col-sm-5
+                    input(type="password" name="newPassword"  class="form-control required" value="")
+                    span.input-star *
+            .form-group
+                label(class="col-sm-3 control-label") 确认新密码:
+                .col-sm-5
+                    input(type="password" name="confirmPassword" class="form-control required" equalto="#newPassword" value="")
+                    span.input-star *
+            .form-group
+                .col-sm-5.col-sm-offset-3
+                    button(type="submit" class="btn btn-primary btn-block") 保&nbsp;存
+

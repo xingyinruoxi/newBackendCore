@@ -1,0 +1,136 @@
+doctype html
+html(lang="zh-CN")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge")
+        meta(name="renderer" content="webkit")
+        meta(name="viewport",content="width=device-width, initial-scale=0.4, maximum-scale=1, user-scalable=yes")
+        //上述4个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
+        title= '这是标题'
+        meta(name="keywords",content="#")
+        meta(name="description",content="#")
+        meta(name="author",content="#")
+        link(rel='shortcut icon',href='/favicon.ico')
+        link(rel='stylesheet', href='/libs/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/libs/zTree/zTreeStyle.css')
+        link(rel='stylesheet', href='/css/backend-core-main.min.css')
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        block css
+  body
+      block section
+      block content
+      block wrap
+      if wrap
+          #wrap
+              header#header
+                h1
+                    a(href='javascript:;') 系统名称
+                ul.links.pull-right
+                    li
+                        i.ico.ico-avotar
+                    li 你好，
+                    li.dropdown
+                        a.dropdown-toggle(href='javascript:;' data-toggle='dropdown' title="个人信息") 周林
+                            i.caret
+                        ul.dropdown-menu
+                            li
+                                a(href='javascript:;') 退出
+              article.clearfix#container
+                  section#section
+                      iframe(src='/personal/userinfo.html' width="100%" height="100%" frameborder="0")#iframe
+                  aside#aside
+                      mixin panel(id,ico,title,body)
+                          dl.panel.panel-default
+                              dt.panel-heading(role="tab" class=title==='ico-home'?'active':'')
+                                  h4.panel-title(class=body.length?'':'noBody' data-href='/user/list.html' role="button" data-toggle="collapse" data-parent="#accordion" href="#"+id class=title==="个人信息"?"":"collapsed" aria-expanded="false" aria-controls=id)
+                                    i.ico(class=ico)
+                                    |#{title}
+                              if body.length
+                                  dd.panel-collapse.collapse(id=id class=title==="个人信息"?"in":"" role="tabpanel")
+                                      .panel-body
+                                          each item in body
+                                              a(data-href=item.dataHref href='javascript:;' class=item.name==='个人信息'?'active':'') #{item.name}
+                      #accordion.panel-group
+                        -
+                            listGroup=[
+                                {
+                                    id:'11',
+                                    ico:'ico-user',
+                                    title:'个人信息',
+                                    body:[
+                                        {name:'个人信息',dataHref:'/personal/userinfo.html'},
+                                        {name:'修改密码',dataHref:'/personal/changepwd.html'}
+                                    ]
+                                },
+                                {
+                                    id:'22',
+                                    ico:'ico-users',
+                                    title:'机构用户',
+                                    body:[
+                                        {name:'用户管理',dataHref:'/company/user.html'},
+                                        {name:'机构管理',dataHref:'/company/company.html'},
+                                        {name:'区域管理',dataHref:'/company/area.html'}
+                                    ]
+                                },
+                                {
+                                    id:'33',
+                                    ico:'ico-sys',
+                                    title:'系统设置',
+                                    body:[
+                                        {name:'菜单管理',dataHref:'/system/menu.html'},
+                                        {name:'角色管理',dataHref:'/system/role.html'},
+                                        {name:'字典管理',dataHref:'/system/dictionry.html'},
+                                        {name:'用户组管理',dataHref:'/system/group.html'}
+                                    ]
+                                },
+                                {
+                                    id:'44',
+                                    ico:'ico-log',
+                                    title:'日志查询',
+                                    body:[
+                                        {name:'日志查询',dataHref:'/log/logquery.html'},
+                                        {name:'连接池监视',dataHref:'/log/poolmonitor.html'}
+                                    ]
+                                },
+                                {
+                                    id:'55',
+                                    ico:'ico-operate',
+                                    title:'运营管理',
+                                    body:[
+                                        {name:'文章管理',dataHref:'/operate/article.html'},
+                                        {name:'短信通道管理',dataHref:'/operate/message.html'}
+                                    ]
+                                }
+                            ]
+                        each item in listGroup
+                            +panel(item.id,item.ico,item.title,item.body)
+                        //-
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title(data-toggle="collapse" data-parent="#accordion" href="#collapseOne") 客户管理
+                                #collapseOne.panel-collapse.collapse.in
+                                    .panel-body
+                                        a(data-href='/backend-core/a/sys/office/' href='javascript:;') 客户列表
+                                        a(data-href='/backend-core/a/sys/office/' href='javascript:;') 审核中客户
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title.collapsed(data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" ) 车辆管理
+                                #collapseTwo.panel-collapse.collapse
+                                    .panel-body
+                                        a(data-href='/backend-core/a/sys/office/' href='javascript:;') 车辆列表
+                                        a(data-href='/backend-core/a/sys/office/' href='javascript:;') 车辆列表
+
+                  a(href='javascript:;')#slideBtn &nbsp;
+              footer#footer Copyright © 2012-2017 backend-core - Powered By JeeSite V1.0.0
+      script(src="/libs/jquery-1.9.1.min.js")
+      script(src="/libs/bootstrap/js/bootstrap.min.js")
+      script(src="/libs/validate/jquery.validate.min.js")
+      script(src="/libs/validate/messages_zh.js")
+      script(src="/libs/zTree/jquery.ztree.core.js")
+      script(src="http://www.treejs.cn/v3/js/jquery.ztree.excheck.js")
+      script(src="/libs/zTree/zNodes.js")
+      script(src="/js/backend-core.main.min.js")

@@ -1,0 +1,584 @@
+// =============================================
+// @des:            zless
+// @author:         jts
+// @time:           2017-05-13
+// @lastTime
+// @version          1.0
+// =============================================
+
+//  reset
+.reset(){
+  .pagination input{width:40px;}
+  .pagination .curPage{position:relative;top:4px;left:10px;}
+  .alert-dismissable .close, .alert-dismissible .close{right: 0;}
+  .alert{
+    box-shadow: none;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+  }
+  form{
+    margin:0;
+    padding:0;
+  }
+  .alert-danger{
+    margin-top:10px;
+    margin-bottom:10px;
+    background:@bg-fooer;
+    .border-radius(0);
+    border-color: #fff;
+    padding-left: 20px;
+    .form-group{
+      margin-right:6px;
+    }
+  }
+  body{
+    color: @color-black;
+    font-family: '微软雅黑';
+  }
+  th,td{
+    font-size:14px;
+  }
+  .table>thead>tr>th {
+    white-space: nowrap;
+  }
+
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    font-size: 14px;
+  }
+  .bg-primary{
+    background:#42ace9 ;
+  }
+  .bg-info{
+    background: @bg-fooer;
+  }
+  .btn-primary{
+    background: #42ace9;
+    border-color:#3a98cf;
+    &:hover{
+      background:#3a98cf;
+      border-color:#3a98cf;
+    }
+  }
+  .btn-info{
+    background: #ddd;
+    border-color:#d2d2d2;
+    text-shadow: none;
+    color: #888;
+    &:hover{
+      background:#d2d2d2;
+      border-color:#d2d2d2;
+      color: #888;
+    }
+  }
+  .row{
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+  .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-right:10px;
+    padding-left:10px;
+  }
+  .form-group{
+    margin-bottom:10px;
+  }
+  .form-control{
+    height: 30px;
+    font-size: 13px;
+    padding:2px 12px;
+    line-height:26px;
+  }
+  .form-horizontal .control-label{
+    padding-right:0px;}
+  .error{
+    color: #ff5b5b;
+    margin-bottom:0;
+  }
+  .modal{
+    margin-left:-160px;
+  }
+  .modal-footer,.modal-header{
+    padding:10px 15px;
+  }
+  .nav-tabs>li>a{
+    padding: 6px 15px;
+    margin-right:4px;
+  }
+  .nav-pills>li>a{
+    padding:5px 15px;
+    margin-right:4px;
+    background-color: @bg-fooer;
+    color:@color-black;
+  }
+  .nav-pills li.active a{
+    background-color: @bg-blue2;
+    &:hover{
+      background-color: @bg-blue2;
+    }
+  }
+  label{
+    font-weight:normal;
+  }
+  .panel-heading{
+    padding:6px 15px;
+  }
+  .panel-title{
+    font-size: 14px;
+    color: #555;
+  }
+  .panel-body{
+    padding:6px 15px;
+    color:@color-black;
+    text-indent: 20px;
+    a{
+      color:@color-black;
+
+      &:hover{
+        text-decoration: none;
+        background: @bg-fooer;
+
+      }
+      &.active{
+        color: #fff;
+        text-decoration: none;
+        background: #2fa4e7;
+        &:hover{
+          color: #fff;
+          text-decoration: none;
+          background: #2fa4e7;
+
+        }
+      }
+    }
+  }
+  .panel-default>.panel-heading{
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top,#ffffff,#f5f5f5);
+    background-image: -ms-linear-gradient(top,#ffffff,#f5f5f5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAF9), to(#f5f5f5));
+    background-image: -webkit-linear-gradient(top,#ffffff,#f5f5f5);
+    background-image: -o-linear-gradient(top,#ffffff,#f5f5f5);
+    background-image: linear-gradient(top,#ffffff,#f5f5f5);
+    background-repeat: repeat-x;
+  }
+  .pagination{
+    display: inline;
+  }
+  .table{
+    margin-bottom:10px;
+    tbody{
+      th{
+        text-align: center;
+      }
+    }
+  }
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    line-height:13px;
+  }
+  .table>thead>tr>th{
+    padding-top:6px;
+  }
+  .modal-backdrop.in{
+    opacity: 0;
+    background: none;
+  }
+}
+//自定义组件
+.themes(){
+  //文字大小
+  .font12{
+    .font12;
+  }
+  .input-star{
+    .pos(a);
+    right: 0;
+    top:4px;
+    color: red;
+  }
+  //图标
+  .ico{
+    @w:20px;
+    @h:18px;
+    display: inline-block;
+    width: @w;
+    height:@h;
+    margin-right: 4px;
+    position: relative;
+    top:4px;
+    background-image: url("../images/spriter.png");
+    background-repeat: no-repeat;
+    &.ico-users{
+      background-position: -119px -48px;
+    }
+    &.ico-log{
+      background-position: -121px -88px;
+    }
+    &.ico-operate{
+      background-position: -121px -127px;
+    }
+    &.ico-home{
+      background-position: -10px -10px;
+    }
+    &.ico-user{
+      background-position: -10px -47px;
+    }
+    &.ico-car{
+      background-position: -10px -85px;
+    }
+    &.ico-house{
+      background-position: -10px -124px;
+    }
+    &.ico-money{
+      background-position: -10px -162px;
+    }
+    &.ico-book{
+      background-position: -10px -199px;
+    }
+    &.ico-safe{
+      background-position: -10px -238px;
+    }
+    &.ico-house2{
+      background-position: -10px -276px;
+    }
+    &.ico-sys{
+      background-position: -10px -313px;
+    }
+    &.ico-menu{
+      background-position:-80px -48px;
+      position: relative;
+      left: 2px;
+    }
+  }
+  //内边距
+  .pad-5 {
+    padding: 5px;
+  }
+
+  .pad-10 {
+    padding: 10px;
+  }
+
+  .pad-15 {
+    padding: 15px;
+  }
+
+  .pad-right-10 {
+    padding-right: 10px;
+  }
+
+  .pad-top-5 {
+    padding-top: 5px;
+  }
+
+  .pad-top-10 {
+    padding-top: 10px;
+  }
+
+  .pad-top-15 {
+    padding-top: 15px;
+  }
+  .pad-top-20 {
+    padding-top: 20px;
+  }
+  .pad-top-25 {
+    padding-top: 25px;
+  }
+
+  .pad-top-30 {
+    padding-top: 30px;
+  }
+
+  .pad-top-40 {
+    padding-top: 40px;
+  }
+
+  .pad-left-10 {
+    padding-left: 10px;
+  }
+
+  .pad-bottom-10 {
+    padding-bottom: 10px;
+  }
+
+  .pad-bottom-15 {
+    padding-bottom: 15px;
+  }
+  .pad-bottom-20 {
+    padding-bottom: 20px;
+  }
+  .pad-bottom-25 {
+    padding-bottom: 25px;
+  }
+
+  .pad-bottom-30 {
+    padding-bottom: 30px;
+  }
+
+  .pad-bottom-40 {
+    padding-bottom: 40px;
+  }
+
+  .mar-top-20 {
+    margin-top: 20px;
+  }
+
+  .mar-top-40 {
+    margin-top: 40px;
+  }
+
+}
+//去除a和label的虚线
+.remove_dotted(){
+  a,label {blr:~'expression(this.onFocus=this.blur())'}
+  a,label {outline:none;}
+}
+//全局定位
+.pos (r){
+  position: relative;
+}
+.pos (a){
+  position: absolute;
+}
+.pos (f){
+  position: fixed;
+}
+
+//定位居中
+.pos-box-cc(@w:600px,@h:360px,@pos:absolute){
+  width: @w;
+  height: @h;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -@w / 2;
+  margin-top: -@h / 2;
+}
+//布局
+.bc(){
+  margin-left: auto;
+  margin-right: auto;
+}
+.bc-d(@w:500px){
+  width: @w;
+  .bc();
+}
+.wh(@w){
+  width: @w;
+  height: @w;
+}
+.w-be-h(@w){
+  width: @w;
+  height: @w;
+}
+.z-index(@index:1){
+  z-index: @index;
+}
+//高度100%
+.h100(){
+  height: 100%;
+}
+//文字垂直居中
+.txt-ver(@h){
+  height: @h;
+  line-height: @h;
+}
+// 同.txt-ver
+.l-h(@h)
+{
+  height: @h;
+  line-height: @h;
+}
+
+//font size
+.font(@p: 12px){
+  font-size: @p;
+}
+.font12(){font-size: 12px;}
+.font13(){font-size: 13px;}
+.font14(){font-size: 14px;}
+.font15(){font-size: 15px;}
+.font16(){font-size: 16px;}
+.font17(){font-size: 17px;}
+.font18(){font-size: 18px;}
+.font19(){font-size: 19px;}
+.font20(){font-size: 20px;}
+.font21(){font-size: 21px;}
+.font22(){font-size: 22px;}
+.font23(){font-size: 23px;}
+.font24(){font-size: 24px;}
+.font25(){font-size: 25px;}
+.font26(){font-size: 26px;}
+.font27(){font-size: 27px;}
+.font28(){font-size: 28px;}
+.font29(){font-size: 29px;}
+.font30(){font-size: 30px;}
+.font31(){font-size: 31px;}
+.font32(){font-size: 32px;}
+.font33(){font-size: 33px;}
+.font34(){font-size: 34px;}
+.font35(){font-size: 35px;}
+.font36(){font-size: 36px;}
+.font37(){font-size: 37px;}
+.font38(){font-size: 38px;}
+.font39(){font-size: 39px;}
+.font40(){font-size: 40px;}
+.font41(){font-size: 41px;}
+.font42(){font-size: 42px;}
+.font43(){font-size: 43px;}
+.font44(){font-size: 44px;}
+//background
+.bg(@url)
+{
+  background: url(@url) 0 0 repeat;
+}
+.bg-m(@url,@x:0,@y:0,@repeat:no-repeat)
+{
+  background: url(@url) @x @y @repeat;
+}
+.bgi(@url)
+{
+  background-image: url(@url);
+}
+.bgp(@x:0,@y:0){
+  background-position: @x @y;
+}
+.bgr-r(){
+  background-repeat: repeat;
+}
+.bgr-x(){
+  background-repeat: repeat-x;
+}
+.bgr-y(){
+  background-repeat: repeat-y;
+}
+.bgr-no(){
+  background-repeat: no-repeat;
+}
+.bga-fix(){
+  background-attachment: fixed;
+}
+
+//清除浮动
+.clearfix(){
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+//特殊需求
+.min-width(@width){
+  min-width: @width;
+  _width:@width;
+}
+.max-width(@width,@id){
+  max-width: @width;
+  _width:~'expression(document.getElementById("@{id}").offsetHeight>parseInt("@{width}")?"@{width}": "auto")';
+  overflow:hidden;
+}
+.min-height(@height){
+  min-height: @height;
+  _height:@height;
+}
+.max-height(@height,@id){
+  max-height: @height;
+  _height:~'expression(document.getElementById("@{id}").offsetHeight>parseInt("@{height}")?"@{height}": "auto")';
+  overflow:hidden;
+}
+
+//透明度
+.opa(@opacity: 80) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+.rgba(@red, @green, @blue, @alpha:1){
+  @filtercolor:`(_f = function(d){ var v = (parseInt(d)|0).toString(16);return v.length<2 ? "0"+v : v;},
+                                        '#'+_f(@{alpha}*255) + _f(@{red}) + _f(@{green})+ _f(@{blue}))`;
+
+  background-color: ~'rgba(@{red},@{green},@{blue},@{alpha})';
+  -ms-filter:~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}')";
+  filter:~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}')";
+}
+
+//文字省略号
+// @substract单位为%
+.ellipsis-basic(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  .font-fa();
+}
+
+.ellipsis(@substract:0) {
+  .ellipsis-basic();
+  width:100% - @substract;
+}
+
+
+// =============================================
+// 创建栅格布局
+// 默认950宽 24列 每列30px 间距10px
+// html结构
+// <div class="vl-grid"> <div class="row"> <div class="span span6"></div> <div class="span span6"></div> <div class="span span6"></div> <div class="span span6"></div> </div> <div class="row"> <div class="span span24"></div> </div> </div>
+// =============================================
+//栅格化
+
+.makeGrid(@colnum: 24, @colwidth: 30, @margin: 0px){
+
+  //列数
+  @gridColumns:             @colnum;
+  //每一列宽度
+  @gridColumnWidth:         @colwidth;
+  //间距
+  @gridGutterWidth:         @margin;
+  //行宽度 = (列数 * 每一列的宽度 ) + (margin * (列数-1));
+  @gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+  //每一列的宽度 间距
+  .gridX (@gridColumnWidth, @gridGutterWidth) {
+    .spanX (@index) when (@index > 0) {
+      .span@{index} { .span(@index); }
+      .spanX(@index - 1);
+    }
+    .spanX (0) {}
+
+    .offsetX (@index) when (@index > 0) {
+      .offset@{index} { .offset(@index); }
+      .offsetX(@index - 1);
+    }
+    .offsetX (0) {}
+
+    .offset (@columns) {
+      margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+    }
+
+    .span (@columns) {
+      width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+    }
+
+    .row {
+      margin-left: @gridGutterWidth * -1;
+      .clearfix();
+    }
+
+    .span{
+      float: left;
+      min-height: 1px; // prevent collapsing columns
+      //background-color: #ccc; //this is a test - busy
+      margin-left: @gridGutterWidth;
+    }
+
+    // generate .spanX and .offsetX
+    .spanX (@gridColumns);
+    .offsetX (@gridColumns);
+
+  }
+  .vl-grid{
+    .gridX(@gridColumnWidth, @gridGutterWidth);
+  }
+
+}

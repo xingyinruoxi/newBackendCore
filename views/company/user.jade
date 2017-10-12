@@ -1,0 +1,186 @@
+extends ../layout
+block section
+    ul(class="nav nav-tabs")#nav-tabs
+        li(class="active")
+            a(href="javascript:;")  用户列表
+        li
+            a(href="/company/adduser.html") 用户添加
+    .alert.alert-danger
+        form.form-inline
+            .form-group
+                label 归属公司：
+                .input-group
+                    input(type="text" class="form-control"  placeholder="")#inputCompany
+                    a(href="#" data-toggle="modal" data-target="#modal-company").input-group-addon
+                        i.glyphicon.glyphicon-search
+            .form-group
+                label &emsp;登录名：
+                input(type="text" class="form-control"  placeholder="")
+            p
+                .form-group
+                    label 归属部门：
+                    .input-group
+                        input(type="text" class="form-control"  placeholder="")#inputOffice
+                        a(href="#" data-toggle="modal" data-target="#modal-office").input-group-addon
+                            i.glyphicon.glyphicon-search
+                .form-group
+                    label &emsp;姓&emsp;名：
+                    input(type="text" class="form-control"  placeholder="")
+                 a(href="javascript:;" class="btn btn-primary") 查询
+                 a(href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-export") 导出
+                 a(href="javascript:;" class="btn btn-primary"  data-toggle="modal" data-target="#modal-import") 导入
+     .alert.alert-success.hide(class="alert-dismissible" role="alert") 删除用户成功
+         button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+            span(aria-hidden="true") &times;
+    table.table.table-bordered.table-striped
+        thead
+            tr
+                th 归属公司
+                th 归属部门
+                th 登录名
+                th 姓名
+                th 电话
+                th 手机
+                th 操作
+        tbody
+            -for(var i=0;i<4;i++)
+                tr
+                    td 山东省总公司
+                    td 公司领导
+                    td
+                        a(href="/company/adduser.html?id=1") sd_admin
+                    td 系统管理员
+                    td 8675
+                    td 13455654345
+                    td
+                        a(href="/company/adduser.html?id=1") 修改
+                        |&nbsp;
+                        a(href="javascript:;" data-toggle="modal" data-target="#modal-del-user") 删除
+    nav
+        ul.pagination
+            li
+                a(href='javascript:;') 首页
+            li
+                a(href='javascript:;' aria-label="Previous") &laquo;上一页
+            li.active
+                a(href='javascript:;') 1
+            li
+                a(href='javascript:;') 2
+            li
+                a(href='javascript:;') 3
+            li
+                a(href='javascript:;' aria-label="Next") 下一页&raquo;
+            li
+                a(href='javascript:;') 最后一页
+        span(style="line-height:34px;")  &emsp;共10页
+    div
+        input(type="text" class="form-control" name="aa"  value="33333")
+        input(type="text" class="form-control" name="aa"  value="44")
+        input(type="text" class="form-control" name="aa"  value="555")
+    <!-- Modal删除用户 -->
+    <div class="modal fade" id="modal-del-user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">系统确认</h4>
+    </div>
+    <div class="modal-body">确认要删除该用户吗？
+    </div>
+    <div class="modal-footer">
+    <a href="/company/user.html" class="btn btn-primary">确认</a>
+    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal导出数据 -->
+    <div class="modal fade" id="modal-export" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">系统确认</h4>
+    </div>
+    <div class="modal-body">确认要导出用户数据吗？
+    </div>
+    <div class="modal-footer">
+    <a href="/doc/用户数导出.xlsx" class="btn btn-primary btn-modal-close">确认</a>
+    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal导入数据 -->
+    <div class="modal fade" id="modal-import" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">导入数据</h4>
+    </div>
+    <div class="modal-body"><input type="file">
+    <p class="pad-top-15 pad-bottom-20"><a href="/doc/用户数据导入模板.xlsx">下载模板</a></p>
+    <span class="color-danger">导入文件不能超过5M，仅允许导入“xls”或“xlsx”格式文件！</span>
+    </div>
+    <div class="modal-footer">
+    <a href="/company/user.html" class="btn btn-primary btn-modal-close">确认</a>
+    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal归属部门查询 -->
+    <div class="modal fade" id="modal-office" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">选择部门</h4>
+    </div>
+    <div class="modal-body">
+    <form class="form-inline">
+    <div class="form-group">
+    <label>关键字：</label>
+    <input type="text"  class="form-control" style="width:135px;">
+    </div>
+    <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+    <div class="pad-top-15 pad-bottom-15">
+    <ul class="list-unstyled ztree"></ul>
+    </div>
+    </div>
+    <div class="modal-footer">
+    <a href="javascript:;" class="btn btn-primary btn-modal-close">确认</a>
+    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal归属公司查询 -->
+    <div class="modal fade" id="modal-company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">选择公司</h4>
+    </div>
+    <div class="modal-body">
+    <form class="form-inline">
+    <div class="form-group">
+    <label>关键字：</label>
+    <input type="text"  class="form-control" style="width:135px;">
+    </div>
+    <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+    <div class="pad-top-15 pad-bottom-15">
+    <ul class="list-unstyled ztree"></ul>
+    </div>
+    </div>
+    <div class="modal-footer">
+    <a href="javascript:;" class="btn btn-primary btn-modal-close">确认</a>
+    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+    </div>
+    </div>
+    </div>
+    </div>
