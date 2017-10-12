@@ -56,7 +56,6 @@
         var modalSelect = $('#modal-company,#modal-office');
         modalSelect.on('shown.bs.modal', function () {
             modalSelect.find('input').focus();
-            console.log(345678);
         })
     }
 
