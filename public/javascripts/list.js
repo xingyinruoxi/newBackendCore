@@ -1,10 +1,40 @@
 'use strict';
 (function () {
     //初使化表单验证
-    function validateInit() {
-        $('#myform').validate();
-    }
+    // function validateInit() {
+    //     $('#myform').validate(function () {
+    //         rules:{},
+    //
+    //     });
+    // }
 
+    $("#myform").validate({
+        rules: {
+            aa: {
+                required: true,
+                minlength: 56
+            },
+            age: {
+                required: true,
+                digits:true
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            aa: {
+                required: "请输入用fghu户名",
+                minlength: "用户名必需adfsaf由两个字母组成"
+            },
+            age: {
+                required: "请输入年龄",
+                digits: "必须输入整数"
+            },
+            email: "请输入一个正确的邮箱"
+        }
+    });
     //curSelectedNode
     function curSelectedNode() {
         $('.ztree').on('click', '.node_name', function () {
