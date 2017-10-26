@@ -140,6 +140,9 @@ td {
 .form-horizontal .control-label {
   padding-right: 0px;
 }
+.panel-group {
+  margin-bottom: 10px;
+}
 .error {
   color: #ff5b5b;
   margin-bottom: 0;
@@ -367,6 +370,9 @@ body,
   padding-top: 70px;
   padding-bottom: 24px;
 }
+td a {
+  padding-right: 10px;
+}
 #header {
   height: 70px;
   background: #fff;
@@ -465,6 +471,8 @@ body,
   position: relative;
   left: -169px;
   padding: 8px 8px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #aside .panel-heading.active {
   background: #2fa4e7;
@@ -643,6 +651,9 @@ td {
 .form-horizontal .control-label {
   padding-right: 0px;
 }
+.panel-group {
+  margin-bottom: 10px;
+}
 .error {
   color: #ff5b5b;
   margin-bottom: 0;
@@ -870,6 +881,9 @@ body,
   padding-top: 70px;
   padding-bottom: 24px;
 }
+td a {
+  padding-right: 10px;
+}
 #header {
   height: 70px;
   background: #fff;
@@ -968,6 +982,8 @@ body,
   position: relative;
   left: -169px;
   padding: 8px 8px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #aside .panel-heading.active {
   background: #2fa4e7;

@@ -15,6 +15,9 @@ html,body,#wrap,#container,#section,#slideBtn{
   padding-top: @headeHeight;
   padding-bottom:24px;
 }
+td a{
+  padding-right:10px;
+}
 #header{
   height:@headeHeight;
   background: @bg-header;
@@ -107,6 +110,8 @@ html,body,#wrap,#container,#section,#slideBtn{
 #aside{ width:@asideWidth;float:left;margin-left:-100%;
   position: relative; left: -(@asideWidth+@slideBtnWidth);
   padding:8px 8px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   .panel-heading{
     &.active{
       background:@bg-blue;
