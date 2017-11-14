@@ -104,7 +104,84 @@ html(lang="zh-CN")
                                         {name:'文章管理',dataHref:'/operate/article.html'},
                                         {name:'短信通道管理',dataHref:'/operate/message.html'}
                                     ]
-                                }
+                                },
+                            {
+                            id:'11',
+                            ico:'ico-user',
+                            title:'客户管理',
+                            body:[
+                            //{name:'客户列表',dataHref:'/user/list.html'},
+                            {name:'客户列表',dataHref:'http://www.baidu.com'},
+                            {name:'审核中客户',dataHref:'/user/checkcustomer.html'}
+                            ]
+                            },
+                            {
+                            id:'12',
+                            ico:'ico-car',
+                            title:'车辆管理',
+                            body:[
+                            {name:'车辆列表',dataHref:'/user/list.html'},
+                            {name:'审核中车辆',dataHref:'/user/list.html'}
+                            ]
+                            },
+                            {
+                            id:'',
+                            ico:'ico-house',
+                            title:'仓库管理',
+                            body:[
+
+                            ]
+                            },
+                            {
+                            id:'13',
+                            ico:'ico-money',
+                            title:'资金管理',
+                            body:[
+                            {name:'贷款申请',dataHref:'/user/list.html'},
+                            {name:'待放款',dataHref:'/user/list.html'},
+                            {name:'还款中',dataHref:'/user/list.html'},
+                            {name:'已结清',dataHref:'/user/list.html'},
+                            {name:'资金流向',dataHref:'/user/list.html'}
+                            ]
+                            },
+                            {
+                            id:'14',
+                            ico:'ico-book',
+                            title:'档案管理',
+                            body:[
+                            {name:'待归档',dataHref:'/user/list.html'},
+                            {name:'部分归档',dataHref:'/user/list.html'},
+                            {name:'已归档',dataHref:'/user/list.html'}
+                            ]
+                            },
+                            {
+                            id:'15',
+                            ico:'ico-safe',
+                            title:'风险管理',
+                            body:[
+                            {name:'预警',dataHref:'/user/list.html'},
+                            {name:'催收',dataHref:'/user/list.html'}
+                            ]
+                            },
+                            {
+                            id:'',
+                            ico:'ico-house2',
+                            title:'人工库盘',
+                            body:[
+
+                            ]
+                            },
+                            {
+                            id:'16',
+                            ico:'ico-sys',
+                            title:'系统管理',
+                            body:[
+                            {name:'用户管理',dataHref:'/user/list.html'},
+                            {name:'角色及权限配置',dataHref:'/user/list.html'},
+                            {name:'营业部管理',dataHref:'/user/list.html'},
+                            {name:'产品配置',dataHref:'/user/list.html'}
+                            ]
+                            }
                             ]
                         each item in listGroup
                             +panel(item.id,item.ico,item.title,item.body)

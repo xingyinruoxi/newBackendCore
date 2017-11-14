@@ -1,12 +1,14 @@
 'use strict';
 (function () {
     //侧边栏高度
+
     function asideHeight() {
         var $aside = $('#aside');
         var headerH = $('#header').outerHeight(),
-            footerH = $('#footer').height(),
-            asideH = $aside.outerHeight(true);
+            footerH = $('#footer').height();
+
         if ($(document).find('#aside').length > 0) {
+            var asideH =$aside.get(0).scrollHeight;
             if (asideH >= $(window).height() - headerH - footerH) {
                 $aside.css('height', $(window).height() - headerH - footerH);
             } else {
@@ -15,6 +17,13 @@
         }
     }
 
+    //分页添加外边距
+    function navPad() {
+        var $nav=$('.pagination').closest('nav');
+        if(!$nav.hasClass('pad-bottom-20')){
+            $nav.addClass('pad-bottom-20');
+        }
+    }
     //window resize
     function winSizeAside() {
         $(window).resize(function () {
@@ -46,6 +55,8 @@
         winSizeAside();
         //侧边栏切换内容页面
         curContent();
+        //分页添加外边距
+        // navPad();
     }
 
     return {
@@ -62,33 +73,6 @@
     //     });
     // }
 
-    $("#myform").validate({
-        rules: {
-            aa: {
-                required: true,
-                minlength: 56
-            },
-            age: {
-                required: true,
-                digits:true
-            },
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            aa: {
-                required: "请输入用fghu户名",
-                minlength: "用户名必需adfsaf由两个字母组成"
-            },
-            age: {
-                required: "请输入年龄",
-                digits: "必须输入整数"
-            },
-            email: "请输入一个正确的邮箱"
-        }
-    });
     //curSelectedNode
     function curSelectedNode() {
         $('.ztree').on('click', '.node_name', function () {
@@ -122,7 +106,7 @@
 
     function start() {
         //初使化表单验证
-        validateInit();
+        //validateInit();
         //curSelectedNode
         curSelectedNode();
         //关闭Modal

@@ -1,12 +1,14 @@
 'use strict';
 (function () {
     //侧边栏高度
+
     function asideHeight() {
         var $aside = $('#aside');
         var headerH = $('#header').outerHeight(),
-            footerH = $('#footer').height(),
-            asideH = $aside.outerHeight(true);
+            footerH = $('#footer').height();
+
         if ($(document).find('#aside').length > 0) {
+            var asideH =$aside.get(0).scrollHeight;
             if (asideH >= $(window).height() - headerH - footerH) {
                 $aside.css('height', $(window).height() - headerH - footerH);
             } else {
@@ -15,6 +17,13 @@
         }
     }
 
+    //分页添加外边距
+    function navPad() {
+        var $nav=$('.pagination').closest('nav');
+        if(!$nav.hasClass('pad-bottom-20')){
+            $nav.addClass('pad-bottom-20');
+        }
+    }
     //window resize
     function winSizeAside() {
         $(window).resize(function () {
@@ -46,6 +55,8 @@
         winSizeAside();
         //侧边栏切换内容页面
         curContent();
+        //分页添加外边距
+        // navPad();
     }
 
     return {
