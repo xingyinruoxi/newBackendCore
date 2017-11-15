@@ -8,6 +8,7 @@
 //布局及公共部分
 html,body,#wrap,#container,#section,#slideBtn{
   height:100%;
+  //overflow-y: hidden;
 }
 #wrap{
   .min-width(1200px);
@@ -94,7 +95,8 @@ td a{
 }
 #footer{
   height:@footerHeight;
-  line-height:@footerHeight;
+  line-height:22px;
+  overflow: hidden;
   background:@bg-fooer;
   text-align: center;
   color: @color-gray;
